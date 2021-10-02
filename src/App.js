@@ -1,21 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import weatherAPI from "./api/weatherAPI";
+import Navigation from "./components/Navigation.js";
 
 const App = () => {
   const [weather, setWeather] = useState();
+  const [location, setLocation] = useState("tracy");
 
-  const searchWeather = async () => {
+  useEffect(() => {
+    searchWeather(location);
+  }, [location]);
+
+  const searchWeather = async (city, zip) => {
     const response = await weatherAPI.get("/weather", {
       params: {
-        q: "tracy",
+        q: city,
       },
     });
     setWeather(response.data.main.temp);
   };
 
-  searchWeather();
-
-  return <div>{weather}</div>;
+  return (
+    <div className="ui container">
+      <Navigation submitSearch={setLocation} />
+      <hr />
+      <div className="ui body">
+        <h3>{location}</h3>
+        {weather}
+      </div>
+    </div>
+  );
 };
 
 export default App;
