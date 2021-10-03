@@ -3,10 +3,11 @@ import weatherAPI from "../api/weatherAPI.js";
 
 const useWeather = (defaultSearchTerm) => {
   const [location, setLocation] = useState({});
+  const [error, setError] = useState("");
 
   useEffect(() => {
     searchWeather(defaultSearchTerm);
-  }, [defaultSearchTerm]);
+  }, [defaultSearchTerm, setError]);
 
   const searchWeather = async (term) => {
     try {
@@ -20,12 +21,13 @@ const useWeather = (defaultSearchTerm) => {
         id: response.data.id,
         temp: response.data.main.temp,
       });
+      setError("");
     } catch (err) {
-      console.log("Failed fetching API");
+      setError(err.message);
     }
   };
 
-  return [location, searchWeather];
+  return [location, searchWeather, error];
 };
 
 export default useWeather;

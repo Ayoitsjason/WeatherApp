@@ -7,6 +7,7 @@ const Search = ({ submitSearch }) => {
     e.preventDefault();
 
     submitSearch(term);
+    setTerm("");
   };
 
   return (

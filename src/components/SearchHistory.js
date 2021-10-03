@@ -1,7 +1,6 @@
 import React from "react";
 
 const SearchHistory = ({ weatherRecord }) => {
-  console.log(weatherRecord);
   const renderRecord = weatherRecord.map((obj) => {
     if (obj.name !== undefined) {
       return (

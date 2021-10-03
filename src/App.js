@@ -7,7 +7,7 @@ import useCleanRecord from "./hooks/useCleanRecord.js";
 
 const App = () => {
   const [weatherRecord, setWeatherRecord] = useState([]);
-  const [location, searchWeather] = useWeather("tracy");
+  const [location, searchWeather, error] = useWeather("tracy");
   const cleanRecord = useCleanRecord(weatherRecord, location);
 
   const onSubmit = (term) => {
@@ -23,7 +23,7 @@ const App = () => {
       <Navigation submitSearch={onSubmit} />
       <hr />
       <div className="ui body">
-        <Weather location={location} />
+        <Weather location={location} error={error} />
         <SearchHistory weatherRecord={cleanRecord} />
       </div>
     </div>
