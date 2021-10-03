@@ -7,7 +7,7 @@ const useWeather = (defaultSearchTerm) => {
 
   useEffect(() => {
     searchWeather(defaultSearchTerm);
-  }, [defaultSearchTerm, setError]);
+  }, [defaultSearchTerm]);
 
   const searchWeather = async (term) => {
     try {

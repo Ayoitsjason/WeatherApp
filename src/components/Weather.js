@@ -15,7 +15,7 @@ const Weather = ({ location, error }) => {
     );
   } else {
     return (
-      <div className="ui segment">
+      <div className="ui segment" style={{ height: "10rem" }}>
         <h3>{name}</h3>
         <p>Temperature: {temp} F</p>
       </div>

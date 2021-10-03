@@ -19,12 +19,17 @@ const App = () => {
   }, [location]);
 
   return (
-    <div className="ui container">
+    <div className="ui center aligned container">
       <Navigation submitSearch={onSubmit} />
-      <hr />
-      <div className="ui body">
-        <Weather location={location} error={error} />
-        <SearchHistory weatherRecord={cleanRecord} />
+      <div className="ui grid container" style={{ marginTop: ".5rem" }}>
+        <div className="two column row">
+          <div className="ten wide column">
+            <Weather location={location} error={error} />
+          </div>
+          <div className="six wide column">
+            <SearchHistory weatherRecord={cleanRecord} />
+          </div>
+        </div>
       </div>
     </div>
   );

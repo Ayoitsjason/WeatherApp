@@ -11,19 +11,19 @@ const Search = ({ submitSearch }) => {
   };
 
   return (
-    <div>
-      <form onSubmit={onSubmit} className="ui form">
+    <form onSubmit={onSubmit} className="ui form">
+      <div className="ui icon input" style={{ width: "60%" }}>
         <input
           type="text"
           value={term}
           onChange={(e) => {
             setTerm(e.target.value);
           }}
-          placeholder="Type in Zip or City"
+          placeholder="Type in Zip, City, or State"
         />
-        <button className="ui button">Search</button>
-      </form>
-    </div>
+        <i className="search icon"></i>
+      </div>
+    </form>
   );
 };
 
