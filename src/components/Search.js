@@ -19,7 +19,7 @@ const Search = ({ submitSearch }) => {
           onChange={(e) => {
             setTerm(e.target.value);
           }}
-          placeholder="Type in Zip, City, or State"
+          placeholder="Type in Zip, City, State, or Country"
         />
         <i className="search icon"></i>
       </div>

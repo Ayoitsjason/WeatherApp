@@ -4,7 +4,14 @@ const SearchHistory = ({ weatherRecord }) => {
   const renderRecord = weatherRecord.map((obj) => {
     if (obj.name !== undefined) {
       return (
-        <li style={{}} key={obj.id}>
+        <li
+          style={{
+            border: ".5px solid lightgrey",
+            margin: ".5rem",
+            padding: ".25rem",
+          }}
+          key={obj.id}
+        >
           {obj.name} {obj.temp} F
         </li>
       );
