@@ -1,10 +1,9 @@
 import Axios from "axios";
-import { weatherKEY } from "../config.js";
 
 export default Axios.create({
   baseURL: "https://api.openweathermap.org/data/2.5",
   params: {
-    appid: weatherKEY,
+    appid: `${process.env.REACT_APP_WEATHER_KEY}`,
     units: "imperial",
   },
 });
