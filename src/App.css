@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  height: 100vh;
+}
+
+.hot {
+  background-image: url("/src/imgs/hot.svg");
+  background-size: cover;
+}
+.warm {
+  background-image: url("/src/imgs/warm.svg");
+  background-size: cover;
+}
+.cold {
+  background-image: url("/src/imgs/cold.svg");
+  background-size: cover;
+}
+
+.header {
+  margin-top: 0 !important;
+}
