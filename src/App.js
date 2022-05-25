@@ -8,7 +8,7 @@ import "./App.css";
 
 const App = () => {
   const [weatherRecord, setWeatherRecord] = useState([]);
-  const [location, searchWeather, error] = useWeather("tracy");
+  const [location, searchWeather, error] = useWeather("California");
   const cleanRecord = useCleanRecord(weatherRecord, location);
 
   const { temp } = location;
